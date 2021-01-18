@@ -1,0 +1,95 @@
+body {
+    width: 60%;
+    margin: 0 auto;
+    background: #f9f9f9;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+main {
+    padding: 20px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+button.btn-link {
+    color: #3333FF;
+}
+
+button.user-details {
+    background: #416C41;
+}
+
+h1 {
+    text-align: center;
+}
+
+.alert {
+    padding: 0;
+    margin-top: 10px;
+}
+
+.has-error {
+    color: #a94442;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-details-container {
+    display: none;
+    text-transform: capitalize;
+}
+
+.user-details-container .panel .user-details-list li.email-field {
+    text-transform: none;
+}
+
+.user-list-container {
+    margin-top: 20px;
+}
+
+.user-list-container #user-list .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+.user-list-container .no-users-panel {
+    margin-top: 20px;
+}
+
+.user-list-container .no-users-panel p {
+    margin: 0;
+    font-size: 20px;
+    text-align: center;
+}
+
+.panel .panel-body img{
+    max-height:  500px;
+    width: -webkit-fill-available;
+}
+
+.panel .panel-body ul {
+    padding: 0;
+}
+
+.panel .panel-body ul li {
+    list-style: none;
+    line-break: anywhere;
+}
+
+.panel .panel-body ul li > span {
+    font-weight: bold;
+}
+
+.user-navigation-menu {
+    display: flex;
+    justify-content: space-between;
+}

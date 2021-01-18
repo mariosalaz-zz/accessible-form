@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <main>  
+    </main>
+
+    <script src="assets/lib/jquery-min.js"></script>
+    <script src="assets/lib/bootstrap.min.js"></script>
+    <script src="assets/lib/underscore-min.js"></script>
+    <script src="assets/lib/backbone-min.js"></script>
+
+    <!-- Routers -->
+    <script src="assets/js/backbone-components/routers/routers.js"></script>
+
+    <!-- Models -->
+    <script src="assets/js/backbone-components/models/form.js"></script>
+    <script src="assets/js/backbone-components/models/country.js"></script>
+    <script src="assets/js/backbone-components/models/user.js"></script>
+
+    <!-- Views -->
+    <script src="assets/js/backbone-components/views/formView.js"></script>
+    <script src="assets/js/backbone-components/views/countryView.js"></script>
+    <script src="assets/js/backbone-components/views/countriesView.js"></script>
+    <script src="assets/js/backbone-components/views/userView.js"></script>
+    <script src="assets/js/backbone-components/views/usersView.js"></script>
+
+    <!-- Collections -->
+    <script src="assets/js/backbone-components/collections/countriesList.js"></script>
+    <script src="assets/js/backbone-components/collections/usersList.js"></script>
+
+    <!-- Form Template -->
+    <script id="form-template" type="text/html">
+        <h1>Sign Up Form</h1>
+        <form role="Sign Up form" autocomplete="off">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" class="form-control" aria-required="true" placeholder="e.g. John"/>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" class="form-control" aria-required="true" placeholder="e.g. Doe"/>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control" aria-required="true" placeholder="example@mail.com"/>
+            </div>
+            <div class="form-group">
+                <label for="countrySelect">Choose a country</label>
+                <select name="country" id="countrySelect" class="form-control" aria-required="true">
+                    <option value="">Select Country</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="companyName">Company</label>
+                <input type="text" id="companyName" name="companyName" class="form-control" aria-required="true" placeholder="e.g. Growth Acceleration Partners"/>
+            </div>
+            <div class="form-group">
+                <label for="hobbies">Hobbies</label>
+                <textarea name="hobbies" id="hobbies" cols="30" rows="5" class="form-control" aria-required="true" placeholder="e.g. Play videogames, Watch T.V"></textarea>
+            </div>
+            <nav class="form-options">
+                <button type="submit" class="btn btn-primary" role="submit-form">Save</button>
+                <button type="button" class="btn btn-link" data-url="users-list" id="seeAllUsers">See all users registered</button>
+            </nav>
+        </form>
+    </script>
+    <script id="users-list-template" type="text/html">
+        <h1>Registered Users</h1>
+        <div class="user-list-container">
+            <ul id="user-list" class="list-group"></ul>
+        </div>
+        <button type="button" class="btn btn-link" data-url="/" id="go-back">Back to Main Screen</a>
+    </script>
+    <script id="user-details-template" type="text/html">
+        <div class="user-details-container">
+            <h1>User Details</h1>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <img onload="onImageLoad()" src=<%= flagUrl %> alt="flag of user's country" class="img-responsive">
+                    <h2><%= firstName + " " + lastName %></h2>
+                    <ul class="user-details-list" role="user">
+                        <li class="user-details"><span class="user-details-title">Country: </span><%= country %></li>
+                        <li class="user-details email-field"><span class="user-details-title">Email: </span><%= email %></li>
+                        <li class="user-details"><span class="user-details-title">Company: </span><%= companyName %></li>
+                        <li class="user-details"><span class="user-details-title">Hobbies: </span><%= hobbies %></li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="user-navigation-menu">
+                <button type="button" role="link" class="btn btn-link back-to-list" data-url="users-list">Back to Users List</button>
+                <button type="button" role="link" class="btn btn-link back-to-main" data-url="/">Back to Main Screen</button>
+            </nav>
+        </div>
+    </script>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
